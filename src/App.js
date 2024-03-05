@@ -9,6 +9,7 @@ import {
 } from "@mui/material";
 import ContactForm from "./components/ContactForm";
 import { BrowserRouter, Link, Routes, Route } from "react-router-dom";
+import { useTheme } from "@mui/material/styles";
 
 const drawerWidth = 240;
 
@@ -29,11 +30,20 @@ const simpleStyles = {
   },
 };
 
+const themedStyles = (theme) => {
+  return {
+    appBar: {
+      zIndex: theme.zIndex.drawer + 1
+    }
+  };
+};
+
 function App() {
+  const theme = useTheme();
   return (
     <BrowserRouter>
       <div>
-        <AppBar position="fixed" sx={{ zIndex: 9999 }}>
+        <AppBar position="fixed" sx={themedStyles(theme).appBar}>
           <Toolbar>
             <Typography variant="h6" noWrap>
               Advanced Material UI
