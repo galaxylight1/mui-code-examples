@@ -4,12 +4,20 @@ import {
   FormControl,
   FormGroup,
   TextField,
+  MenuItem,
+  ListItemText,
+  Select,
 } from "@mui/material";
+import { useState } from "react";
 
 const skills = ["React", "Angular", "Python", "NodeJS"];
 const roles = ["Software Dev", "Project Manager"];
 
 export default function ContactForm() {
+  const [skill, setSkill] = useState("");
+  const handleOnChange = (event) => {
+    setSkill(event.target.value);
+  };
   return (
     <Paper>
       <form>
@@ -28,7 +36,19 @@ export default function ContactForm() {
             />
           </FormGroup>
           <FormGroup row>
-              <Select></Select>
+            <Select
+              id="skill-select"
+              value={skill}
+              onChange={handleOnChange}
+            >
+              {skills.map((skillName) => {
+                return (
+                  <MenuItem value={skillName} key={skillName}>
+                    <ListItemText primary={skillName} />
+                  </MenuItem>
+                );
+              })}
+            </Select>
           </FormGroup>
         </FormControl>
       </form>
