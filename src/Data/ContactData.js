@@ -11,7 +11,7 @@ export const contactData = [
     id: 2,
     name: "Kody Spencer",
     role: "Manager",
-    skills: ["comm", "mgmt"],
+    skills: ["comm", "mgmt", "documentation"],
     startDate: "123",
     preference: "Work from office",
   },
