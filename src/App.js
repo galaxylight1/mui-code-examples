@@ -10,6 +10,7 @@ import {
 import ContactForm from "./components/ContactForm";
 import { BrowserRouter, Link, Routes, Route } from "react-router-dom";
 import { useTheme } from "@mui/material/styles";
+import ContactCardGrid from "./components/ContactCardGrid";
 
 const drawerWidth = 240;
 
@@ -75,6 +76,9 @@ function App() {
           <Toolbar />
           <Routes>
             <Route path="/form" element={<ContactForm />}></Route>
+          </Routes>
+          <Routes>
+            <Route path="/grid" element={<ContactCardGrid />}></Route>
           </Routes>
         </main>
       </div>
