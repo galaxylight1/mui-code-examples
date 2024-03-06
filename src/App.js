@@ -26,15 +26,15 @@ const simpleStyles = {
   },
   content: {
     marginLeft: drawerWidth + 30,
-    marginTop: "2vh",
+    marginTop: "20px",
   },
 };
 
 const themedStyles = (theme) => {
   return {
     appBar: {
-      zIndex: theme.zIndex.drawer + 1
-    }
+      zIndex: theme.zIndex.drawer + 1,
+    },
   };
 };
 
@@ -55,6 +55,7 @@ function App() {
           open={true}
           sx={simpleStyles.drawer}
           PaperProps={{ sx: simpleStyles.drawerPaper, elevation: 9 }}
+          disableEnforceFocus
         >
           <Toolbar />
           <List>
